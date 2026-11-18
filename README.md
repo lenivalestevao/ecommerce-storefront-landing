@@ -2,6 +2,8 @@
 
 A free, responsive storefront landing page template built with plain HTML5, CSS3 and JavaScript — no frameworks, no build step. Designed to look and feel like a real modern online store, ready to download and adapt.
 
+![Preview](preview.png)
+
 **[Live demo](https://lenivalestevao.github.io/ecommerce-storefront-landing/)**
 
 ## Features
