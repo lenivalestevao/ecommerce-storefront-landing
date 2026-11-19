@@ -1,47 +1,54 @@
-# Aurelia — E-commerce Storefront Landing Page
+# Aurelia - Multi-page E-commerce Storefront Template
 
-A free, responsive storefront landing page template built with plain HTML5, CSS3 and JavaScript — no frameworks, no build step. Designed to look and feel like a real modern online store, ready to download and adapt.
+A free, responsive online store template built with plain HTML5, CSS3 and JavaScript. No frameworks, no build step. It has every page a real shop needs, a cart that works and a full checkout flow, ready to download and adapt.
 
 ![Preview](preview.png)
 
 **[Live demo](https://lenivalestevao.github.io/ecommerce-storefront-landing/)**
 
-## Features
+## Pages
 
-- Sticky header with search, wishlist and a live cart counter
-- Mobile off-canvas navigation menu
-- Hero banner with a sale badge and dual call-to-action buttons
-- Trust bar (free shipping, secure payment, easy returns, support)
-- Shop-by-category grid, generated from a simple JavaScript array
-- Featured products grid with ratings, sale badges, strikethrough pricing, wishlist toggle and an "Add to Cart" interaction
-- Flash sale promo banner
-- Customer testimonials with star ratings
-- Newsletter signup form with a success message
-- Fully responsive down to small mobile screens
-- Zero dependencies — just HTML, CSS and vanilla JavaScript
+All pages run in a single `index.html` and are routed with the URL hash (for example `#/shop`), so it works on any static host such as GitHub Pages.
 
-## Using it as a template
+| Page | Route | What it does |
+| --- | --- | --- |
+| Home | `#/` | Hero slider, trust bar, categories, featured products carousel, flash sale with countdown, testimonials carousel, newsletter |
+| Shop | `#/shop` and `#/shop/Women` | Category sidebar, live search, price slider, on-sale filter and sorting |
+| Product | `#/product/1` | Gallery, color and size pickers, quantity, reviews and related products |
+| Cart | `#/cart` | Quantity controls, remove, promo code and shipping rule |
+| Checkout | `#/checkout` | Contact, address, delivery and demo payment form with validation |
+| Order confirmation | `#/success` | Order number and summary after placing an order |
+| Wishlist | `#/wishlist` | Saved products |
+| Account | `#/account` | Sign in, create account and order history (demo, stored in your browser) |
+| About, Contact, FAQ | `#/about` `#/contact` `#/faq` | Content pages with a contact form and accordion |
+| Privacy, Terms | `#/privacy` `#/terms` | Sample legal pages |
+| 404 | any unknown route | Friendly not-found page |
 
-Clone this repo, download the ZIP, or copy `index.html`, `style.css` and `script.js` into your own project. The whole color palette lives in CSS custom properties at the top of `style.css`:
+There is also a slide-in cart drawer, wishlist and cart counters in the header, toast messages and a mobile off-canvas menu.
 
-```css
-:root {
-  --dark: #0f172a;
-  --accent: #f97316;
-  --accent-dark: #ea580c;
-}
-```
+## Try it
 
-Categories, products and testimonials are rendered from plain data arrays at the top of `script.js`, so adding or editing items (icon, name, price, rating, review text) only takes editing one array — no HTML editing required.
+- Add products to the cart and open **Checkout**. Any values work, no payment is processed.
+- Use the promo code `AURELIA10` in the cart for 10% off.
+- Shipping is free over $50, otherwise $6. Express is $15.
 
-## Project structure
+## Structure
 
 ```
-index.html   Markup for the storefront layout
-style.css    All styling, including the mobile breakpoints
-script.js    Cart, wishlist, nav toggle and data-driven sections
+index.html   # page shell: header, footer, cart drawer
+style.css    # all styles, responsive down to small phones
+script.js    # router, pages, catalog data, cart, wishlist, checkout
 ```
+
+## Customize
+
+- **Products and categories:** edit the `P` and `CATS` arrays at the top of `script.js`.
+- **Colors:** change the CSS variables in `:root` at the top of `style.css` (the accent color is `--accent`).
+- **Brand and text:** replace "Aurelia" in `index.html` and the copy inside the page functions in `script.js`.
+- **Real data:** the catalog is a local array, so connect it to your own API or store back end when you are ready.
+
+Cart, wishlist and the demo account are kept in `localStorage`. Checkout and sign in are demos only, so add a real back end and payment provider before going live.
 
 ## License
 
-MIT — use it however you like, personal or commercial.
+MIT
