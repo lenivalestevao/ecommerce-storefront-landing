@@ -3,175 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurelia — Modern Storefront Template</title>
+<meta name="description" content="Aurelia: a free, multi-page storefront template in plain HTML, CSS and JavaScript.">
+<title>Aurelia | Modern Storefront Template</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="announce-bar">
-<p>Free shipping on orders over $50 &nbsp;•&nbsp; New arrivals every week &nbsp;•&nbsp; 30-day easy returns</p>
-</div>
+<div class="announce-bar"><p>Free shipping on orders over $50 &nbsp;&bull;&nbsp; New arrivals every week &nbsp;&bull;&nbsp; 30-day easy returns</p></div>
 
 <header class="header">
-<div class="header-inner">
-<a href="#" class="brand">Aurelia</a>
-<nav class="nav" id="mainNav">
-<a href="#shop">Shop</a>
-<a href="#categories">Categories</a>
-<a href="#deals">Deals</a>
-<a href="#testimonials">Reviews</a>
-<a href="#newsletter">Contact</a>
-</nav>
-<div class="header-actions">
-<div class="search-box">
-<input type="search" placeholder="Search products...">
-<span class="search-icon">🔍</span>
-</div>
-<button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">♡</button>
-<button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
-🛒
-<span class="cart-count" id="cartCount">0</span>
-</button>
-<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
-</div>
-</div>
+  <div class="container header-inner">
+    <button class="icon-btn menu-btn" data-action="nav-toggle" aria-label="Open menu"><span data-icon="menu"></span></button>
+    <a href="#/" class="brand">Aurelia</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/shop" data-route="shop">Shop</a>
+      <a href="#/shop/Women">Women</a>
+      <a href="#/shop/Men">Men</a>
+      <a href="#/shop/Home">Home</a>
+      <a href="#/about" data-route="about">About</a>
+      <a href="#/contact" data-route="contact">Contact</a>
+      <a href="#/faq" data-route="faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-box"><span data-icon="search" data-size="18"></span><input id="siteSearch" type="search" placeholder="Search products..." autocomplete="off"></label>
+      <a class="icon-btn" href="#/wishlist" aria-label="Wishlist"><span data-icon="heart"></span><span class="count" id="wishCount" hidden>0</span></a>
+      <a class="icon-btn" href="#/account" aria-label="Account"><span data-icon="user"></span></a>
+      <button class="icon-btn" data-action="cart-open" aria-label="Open cart"><span data-icon="bag"></span><span class="count" id="cartCount" hidden>0</span></button>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
-<div class="hero-inner">
-<div class="hero-text">
-<span class="eyebrow">New Season Collection</span>
-<h1>Shop the look.<br>Live the style.</h1>
-<p>Curated essentials and statement pieces, handpicked every season. Quality you can feel, prices you'll love.</p>
-<div class="hero-actions">
-<a href="#shop" class="btn btn-primary">Shop Now</a>
-<a href="#deals" class="btn btn-ghost">View Deals</a>
-</div>
-</div>
-<div class="hero-visual">
-<div class="hero-card">
-<span class="hero-badge">Up to 50% off</span>
-<div class="hero-emoji">🛍️</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="trust-bar">
-<div class="trust-item">
-<span class="trust-icon">🚚</span>
-<div>
-<strong>Free Shipping</strong>
-<p>On orders over $50</p>
-</div>
-</div>
-<div class="trust-item">
-<span class="trust-icon">🔒</span>
-<div>
-<strong>Secure Payment</strong>
-<p>100% protected checkout</p>
-</div>
-</div>
-<div class="trust-item">
-<span class="trust-icon">↩️</span>
-<div>
-<strong>Easy Returns</strong>
-<p>30-day return policy</p>
-</div>
-</div>
-<div class="trust-item">
-<span class="trust-icon">💬</span>
-<div>
-<strong>24/7 Support</strong>
-<p>We're here to help</p>
-</div>
-</div>
-</section>
-
-<section class="categories" id="categories">
-<div class="section-head">
-<h2>Shop by Category</h2>
-<p>Find exactly what you're looking for</p>
-</div>
-<div class="category-grid" id="categoryGrid"></div>
-</section>
-
-<section class="products" id="shop">
-<div class="section-head">
-<h2>Featured Products</h2>
-<p>Hand-picked favorites our customers love</p>
-</div>
-<div class="product-grid" id="productGrid"></div>
-</section>
-
-<section class="promo" id="deals">
-<div class="promo-content">
-<span class="promo-eyebrow">Limited Time</span>
-<h2>Weekend Flash Sale</h2>
-<p>Get up to 50% off on selected items. Offer ends Sunday midnight.</p>
-<a href="#shop" class="btn btn-light">Grab the Deal</a>
-</div>
-</section>
-
-<section class="testimonials" id="testimonials">
-<div class="section-head">
-<h2>What Our Customers Say</h2>
-<p>Real reviews from real shoppers</p>
-</div>
-<div class="testimonial-grid" id="testimonialGrid"></div>
-</section>
-
-<section class="newsletter" id="newsletter">
-<div class="newsletter-inner">
-<h2>Join Our Newsletter</h2>
-<p>Get 10% off your first order plus the latest drops in your inbox.</p>
-<form class="newsletter-form" id="newsletterForm">
-<input type="email" placeholder="Enter your email" required>
-<button type="submit" class="btn btn-primary">Subscribe</button>
-</form>
-<p class="newsletter-msg" id="newsletterMsg"></p>
-</div>
-</section>
+<main id="view"></main>
 
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-col footer-brand">
-<span class="brand">Aurelia</span>
-<p>Modern essentials for everyday living, curated with care.</p>
-<div class="social-links">
-<a href="#">IG</a>
-<a href="#">FB</a>
-<a href="#">TT</a>
-<a href="#">PI</a>
-</div>
-</div>
-<div class="footer-col">
-<h3>Shop</h3>
-<a href="#">New Arrivals</a>
-<a href="#">Best Sellers</a>
-<a href="#">Sale</a>
-<a href="#">Gift Cards</a>
-</div>
-<div class="footer-col">
-<h3>Support</h3>
-<a href="#">Contact Us</a>
-<a href="#">Shipping Info</a>
-<a href="#">Returns</a>
-<a href="#">FAQ</a>
-</div>
-<div class="footer-col">
-<h3>Company</h3>
-<a href="#">About Us</a>
-<a href="#">Careers</a>
-<a href="#">Privacy Policy</a>
-<a href="#">Terms of Service</a>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2026 Aurelia. All rights reserved.</p>
-<p class="payment-icons">Visa &nbsp;•&nbsp; Mastercard &nbsp;•&nbsp; PayPal &nbsp;•&nbsp; Pix</p>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="#/" class="brand">Aurelia</a><p>Everyday essentials for your wardrobe and your home, made to last.</p></div>
+      <div><h3>Shop</h3><ul><li><a href="#/shop">All products</a></li><li><a href="#/shop/Women">Women</a></li><li><a href="#/shop/Men">Men</a></li><li><a href="#/shop/Accessories">Accessories</a></li></ul></div>
+      <div><h3>Support</h3><ul><li><a href="#/faq">FAQ</a></li><li><a href="#/contact">Contact us</a></li><li><a href="#/account">My account</a></li><li><a href="#/wishlist">Wishlist</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#/about">About us</a></li><li><a href="#/privacy">Privacy policy</a></li><li><a href="#/terms">Terms of service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Aurelia. Free and MIT licensed template.</span><span>Made by <a href="https://github.com/lenivalestevao" target="_blank" rel="noopener">Leni Junior</a></span></div>
+  </div>
 </footer>
+
+<div class="scrim" data-action="ui-close"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head"><h3>Your cart</h3><button class="icon-btn" data-action="ui-close" aria-label="Close cart"><span data-icon="x"></span></button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+<div class="toasts" id="toasts" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>
